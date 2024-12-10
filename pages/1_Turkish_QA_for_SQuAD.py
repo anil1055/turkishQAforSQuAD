@@ -67,7 +67,7 @@ with st.form('my_form'):
 
     else:
         result = pipe(question=question, context=context)
-        st.text("Your response: " + str(result))
+        st.text("Your response: \n " + str(result["answer"]) + "\n" + str(result["score"]*100) + "with score")
         
         
 
