@@ -67,7 +67,7 @@ with st.form('my_form'):
 
     else:
         result = pipe(question=question, context=context)
-        if result[score] < 0.40:
+        if result["score"] < 0.45:
             result["answer"] = "Cevap bulunamadı!"
         st.text("Your response: \n " + str(result["answer"]) + "\n" + str(result["score"]*100)[:5] + " with score")
         
