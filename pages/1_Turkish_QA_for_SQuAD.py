@@ -66,7 +66,7 @@ with st.form('my_form'):
         st.stop()
 
     else:
-        result = pipe(question=question, context=context)[0]
+        result = pipe(question=question, context=context)
         st.text("Your response: " + result)
         
         
