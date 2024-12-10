@@ -56,8 +56,8 @@ model_display_name = selected_model  # Already formatted
 st.write(f"Model being used: `{model_display_name}`")
 
 with st.form('my_form'):
-  context = st.text_area('Enter text:', 'Your context is entered here for QA task')
-  question = st.text_input("Enter your question for analysis:", "Your question")
+  context = st.text_area('Enter text:', 'Normanlar (Normans: Nourmands; Fransizca: Normands; Latince: Normanni), 10. ve 11. yüzyillarda Fransa'da bir bölge olan Normandiya'ya adini veren insanlardir. Onlar Iskandinav soyundan ('Norman' 'Norseman' geliyor) akincilari ve Danimarka, Izlanda ve Norveç'ten korsanlar, liderleri Rollo altinda, Bati Francia Krali Charles III sadakat yemini etmeyi kabul etti. Nesiller boyunca asimilasyon ve yerli Frenk ve Roman-Galya nüfuslariyla karistirma, torunlari yavas yavas Bati Francia'nin Karolina kökenli kültürleriyle birlesecekti. Normanlarin farkli kültürel ve etnik kimligi baslangiçta 10. yüzyilin ilk yarisinda ortaya çikti ve devam eden yüzyillar boyunca gelismeye devam etti.')
+  question = st.text_input("Enter your question for analysis:", "Normandiya hangi ülkede bulunur?")
   submitted = st.form_submit_button('Submit')
   
   if submitted:
@@ -67,7 +67,7 @@ with st.form('my_form'):
 
     else:
         result = pipe(question=question, context=context)
-        st.text("Your response: " + result)
+        st.text("Your response: " + str(result))
         
         
 
